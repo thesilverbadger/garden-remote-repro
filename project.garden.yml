@@ -1,20 +1,20 @@
 apiVersion: garden.io/v1
 kind: Project
 name: garden-remote
-defaultEnvironment: local
+defaultEnvironment: development
 
 environments:
-  - name: local
+  - name: development
   - name: production
 
 providers:
   - name: exec
-    environments: [ local, production ]
+    environments: [ development, production ]
 
 ---
 kind: Run
 name: run-remote-task
 type: exec
-disabled: "${environment.name == 'local'}"
+disabled: "${environment.name == 'development'}"
 spec:
-  command: ["sh", "-c", "echo 'Hello from garden-remote'"]
+  command: ["sh", "-c", "echo 'Hello from garden-remote in development'"]
