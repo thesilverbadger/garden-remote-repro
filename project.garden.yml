@@ -15,6 +15,6 @@ providers:
 kind: Run
 name: run-remote-task
 type: exec
-disabled: "${environment.name == 'production'}"
+disabled: "${environment.name == 'local'}"
 spec:
   command: ["sh", "-c", "echo 'Hello from garden-remote'"]
