@@ -10,3 +10,5 @@ environments:
 providers:
   - name: exec
     environments: [ development, production ]
+  - name: terraform
+    environments: [ production ]
