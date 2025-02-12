@@ -4,10 +4,10 @@ type: exec
 environments:
   - production
   - development
-dependencies:
-  $if: ${environment.name == 'production'}
-  $then:
-    - deploy.tf-production
+#dependencies:
+  #$if: ${environment.name == 'production'}
+  #$then:
+    #- deploy.tf-production
 spec:
   $if: ${environment.name != 'production'}
   $then:
