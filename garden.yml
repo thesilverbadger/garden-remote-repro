@@ -13,7 +13,7 @@ spec:
   $then:
     command: ["sh", "-c", "echo 'Hello from garden-remote in development'"]
   $else:
-    command: ["sh", "-c", "echo 'Hello from garden-remote in production'"]
+    command: ["sh", "-c", "echo '${runtime.services.tf-production.outputs.welcome_message}'"]
 
 ---
 kind: Deploy
