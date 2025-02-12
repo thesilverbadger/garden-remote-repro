@@ -3,6 +3,7 @@ name: run-remote-task
 type: exec
 environments:
   - production
+  - development
 spec:
   $if: ${environment.name != 'production'}
   $then:
