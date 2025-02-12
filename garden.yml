@@ -6,3 +6,12 @@ environments:
   - production
 spec:
   command: ["sh", "-c", "echo 'Hello from garden-remote in development'"]
+
+---
+kind: Deploy
+type: terraform
+name: tf-production
+environments:
+  - production
+spec:
+  root: .
