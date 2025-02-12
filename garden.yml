@@ -1,11 +1,14 @@
 kind: Run
 name: run-remote-task
 type: exec
-#disabled: "${environment.name == 'development'}"
 environments:
   - production
 spec:
-  command: ["sh", "-c", "echo 'Hello from garden-remote in development'"]
+  $if: ${environment.name != 'production'}
+  $then:
+    command: ["sh", "-c", "echo 'Hello from garden-remote in development'"]
+  $else:
+    command: ["sh", "-c", "echo 'Hello from garden-remote in production'"]
 
 ---
 kind: Deploy
